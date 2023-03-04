@@ -4,7 +4,7 @@ toc::[]
 :sectnums:
 :sectnumlevels: 4
 
-== Copied from https://github.com/oravirt/ansible-oracle and modify for my own use!`
+== Copied from https://github.com/oravirt/ansible-oracle and modified for my own use!
 == Feauturelist and Supported options in `ansible-oracle`
 
 * Installs Oracle RAC, RAC One Node and normal single instances.
