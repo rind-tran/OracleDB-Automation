@@ -1,0 +1,17 @@
+---
+use_default_rules: true
+
+skip_list:
+  - name[casing]
+
+exclude_paths:
+  - .github
+  - dbhome-conversion
+  - docker
+  - plugins/modules
+  - playbooks/desupported
+  - changelogs
+  - roles/oraemagent_install  # deprecated role
+
+extra_vars:
+  hostgroup: all
