@@ -107,8 +107,5 @@ Vagrant.configure("2") do |config|
     yum update -y
     /sbin/rcvboxadd quicksetup all
 
-    # Update ansible_ssh_pass for container
-    echo "          ansible_ssh_pass: vagrant" >> /home/vagrant/git/ansible-oracle/example/beginner/ansible/inventory/hosts.yml
-
   SHELL
 end
