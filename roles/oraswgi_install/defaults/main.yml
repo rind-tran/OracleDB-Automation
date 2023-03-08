@@ -1,7 +1,7 @@
 ---
 
 cluster_master: "{{ play_hosts[0] }}"
-role_separation: false
+role_separation: true
 hostgroup: "{{ group_names[0] }}"
 hostgroup_hub: "{{ hostgroup }}-hub"
 hostgroup_leaf: "{{ hostgroup }}-leaf"
@@ -103,7 +103,7 @@ run_configtoolallcommand: true
 oracle_cluster_mgmdb: true
 oracle_gi_cluster_type: STANDARD              # STANDARD | FLEX | STANDALONE (12.2 specific)
 oracle_install_option_gi: "{% if configure_cluster %}CRS_CONFIG{% else %}HA_CONFIG{% endif %}"
-oracle_install_version_gi: 12.2.0.1
+oracle_install_version_gi: 19.3.0.0
 patch_before_rootsh: true
 apply_patches_gi: false
 
