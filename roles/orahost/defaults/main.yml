@@ -153,7 +153,7 @@ host_fs_layout:
     state: present
     filesystem:
       - {mntp: /u01, lvname: lvorabase, lvsize: 25G, fstype: xfs}
-      - {mntp: /u02, lvname: lvoradata, lvsize: 25G, fstype: xfs, fsopts: "-m reflink=1 -m crc=1"}
+      - {mntp: /u02, lvname: lvoradata, lvsize: 100%FREE, fstype: xfs, fsopts: "-m reflink=1 -m crc=1"} # 18/Mar/23 Fix lvsize to 100%Free (from 25G)
     disk:
       - {device: /dev/sdb, pvname: /dev/sdb1}
 
