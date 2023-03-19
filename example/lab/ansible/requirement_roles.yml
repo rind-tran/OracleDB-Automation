@@ -1,5 +1,0 @@
----
-roles:
-  - src: https://github.com/rind-tran/OracleDB-Automation
-    version: master
-    name: orasw_meta
