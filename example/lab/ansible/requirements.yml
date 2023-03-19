@@ -1,6 +1,11 @@
 ---
-collections:
-  - name: devsec.hardening
-    version: 8.2.0
-  - name: opitzconsulting.ansible_oracle
-    version: 3.2.0
+- collections:
+    - name: devsec.hardening
+      version: 8.2.0
+    - name: opitzconsulting.ansible_oracle
+      version: 3.2.0
+
+# from GitLab or other git-based scm
+- src: https://github.com/rind-tran/OracleDB-Automation
+  version: master
+  name: oracle-roles
