@@ -30,6 +30,7 @@ ntp_type: "{% if ansible_distribution_major_version | int >= 8 %}chrony\
              {%- endif %}"
 common_packages: "{% if ansible_distribution_major_version | int == 6 %}{{ common_packages_el6 }}\
                   {%- elif ansible_distribution_major_version | int == 7 %}{{ common_packages_el7 }}\
+                  {%- elif ansible_distribution_major_version | int == 8 %}{{ common_packages_el8 }}\
                   {%- else %}None\
                   {%- endif %}"
 
