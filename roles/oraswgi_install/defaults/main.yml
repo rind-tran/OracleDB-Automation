@@ -122,7 +122,7 @@ oracle_gi_image: "{%- if oracle_sw_copy %}{{ oracle_stage }}\
                 {%- else %}{{ oracle_stage_remote }}\
                 {%- endif %}\
                 {%- if oracle_install_image_gi is defined %}/{{ oracle_install_image_gi }}\
-                {%- else %}//{{ item.filename }}\
+                {%- else %}/{{ item.filename }}\
                 {%- endif %}"
 
 oracle_sw_image_gi:                                              # Files containing the installation media for Grid Infrastructure

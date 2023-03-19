@@ -29,6 +29,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.disk :disk, size: "50GB", name: "#{vm_name}_oracle"
   config.vm.disk :disk, size: "100GB", name: "#data_oracle"
+  config.vm.disk :disk, size: "1GB", name: "#fra_oracle"
 
   #config.vm.box =  "Rendanic/oraclelinux-7.x"
   config.vm.box =  "oraclebase/oracle-8"
@@ -75,8 +76,10 @@ Vagrant.configure("2") do |config|
 
     # Install docker for Ansible-Container!
     yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-    yum-config-manager --enable ol7_addons
-    yum install -y oraclelinux-developer-release-el7.x86_64
+    #yum-config-manager --enable ol7_addons
+    yum-config-manager --enable ol8_addons
+    #yum install -y oraclelinux-developer-release-el7.x86_64
+    yum install -y oraclelinux-developer-release-el8.x86_64
     yum install -y docker-ce
     usermod -G docker -a vagrant
     systemctl start docker

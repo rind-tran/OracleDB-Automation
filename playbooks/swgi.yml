@@ -3,9 +3,9 @@
   hosts: "{{ hostgroup | default('all') }}"
   become: true
   any_errors_fatal: true
-  collections:
-    - opitzconsulting.ansible_oracle
+  # collections:
+  #   - opitzconsulting.ansible_oracle
   roles:
-    - oraswgi_install
-    - oraswgi_manage_patches
-    - oraasm_manage_diskgroups
+    - ../roles/oraswgi_install
+    - ../roles/oraswgi_manage_patches
+    - ../roles/oraasm_manage_diskgroups
