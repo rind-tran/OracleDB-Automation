@@ -12,7 +12,6 @@ epel7_rpm: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rp
 epel6_rpm: https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
 ol_repo_file: "{% if ansible_distribution_major_version | int == 6 %}{{ ol6_repo_file }}\
                  {%- elif ansible_distribution_major_version | int == 7 %}{{ ol7_repo_file }}\
-                 {%- elif ansible_distribution_major_version | int == 8 %}{{ ol8_repo_file }}\
                  {%- else %}None\
                  {%- endif %}"
 ol6_repo_file: public-yum-ol6.repo
