@@ -67,7 +67,7 @@
         - not gi_ignoreprereq | bool
 
     - name: install_home_gi | Execute runcluvfy.sh for Oracle Restart
-      ansible.builtin.command:
+      # ansible.builtin.command:
         # argv:
         #   - "source /tmp/env && {{ oracle_home_gi }}/runcluvfy.sh"
         #   - comp
@@ -76,6 +76,7 @@
         #   - crs
         #   - -orainv
         #   - oinstall
+      ansible.builtin.shell:
         cmd: "source /tmp/env && {{ oracle_home_gi }}/runcluvfy.sh comp sys -p crs -orainv oinstall"
       register: cmdruncluvfy
       failed_when: cmdruncluvfy.rc == -1
