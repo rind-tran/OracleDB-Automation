@@ -68,14 +68,15 @@
 
     - name: install_home_gi | Execute runcluvfy.sh for Oracle Restart
       ansible.builtin.command:
-        argv:
-          - "source /tmp/env && {{ oracle_home_gi }}/runcluvfy.sh"
-          - comp
-          - sys
-          - -p
-          - crs
-          - -orainv
-          - oinstall
+        # argv:
+        #   - "source /tmp/env && {{ oracle_home_gi }}/runcluvfy.sh"
+        #   - comp
+        #   - sys
+        #   - -p
+        #   - crs
+        #   - -orainv
+        #   - oinstall
+        cmd: "source /tmp/env && {{ oracle_home_gi }}/runcluvfy.sh comp sys -p crs -orainv oinstall"
       register: cmdruncluvfy
       failed_when: cmdruncluvfy.rc == -1
       changed_when: cmdruncluvfy.rc == 0
