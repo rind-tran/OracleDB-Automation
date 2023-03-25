@@ -6,6 +6,16 @@
   run_once: "{{ configure_cluster }}"
   tags: runcluvfy
   block:
+    - name: Add a line to a file if the file does not exist, without passing regexp
+      become: true
+      become_user: "{{ grid_install_user }}"
+      ansible.builtin.lineinfile:
+        path: /tmp/env
+        line: export CV_ASSUME_DISTID=OEL8
+        create: yes
+      when:
+        - ansible_os_family == 'RedHat'
+        - ansible_distribution_major_version | int == 8
 
     - ansible.builtin.debug:  # noqa name[missing]
         msg: "install_home_gi | Sttart Execute runcluvfy.sh for Grid-Infrastructure"
@@ -59,7 +69,7 @@
     - name: install_home_gi | Execute runcluvfy.sh for Oracle Restart
       ansible.builtin.command:
         argv:
-          - "{{ oracle_home_gi }}/runcluvfy.sh"
+          - "source /tmp/env && {{ oracle_home_gi }}/runcluvfy.sh"
           - comp
           - sys
           - -p
