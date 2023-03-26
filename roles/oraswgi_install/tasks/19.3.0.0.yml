@@ -121,15 +121,17 @@
       run_once: true
 
     - name: install_home_gi | Install Grid Infrastructure
-      ansible.builtin.command:
-        # noqa no-changed-when
-        argv:
-          - "{{ oracle_home_gi }}/gridSetup.sh"
-          - -responseFile
-          - "{{ oracle_rsp_stage }}/{{ oracle_grid_responsefile }}"
-          - -waitforcompletion
-          - -silent
-          - "{{ giignoreprereqparam | default(omit) }}"
+      # ansible.builtin.command:
+      #   # noqa no-changed-when
+      #   argv:
+      #     - "{{ oracle_home_gi }}/gridSetup.sh"
+      #     - -responseFile
+      #     - "{{ oracle_rsp_stage }}/{{ oracle_grid_responsefile }}"
+      #     - -waitforcompletion
+      #     - -silent
+      #     - "{{ giignoreprereqparam | default(omit) }}"
+      ansible.builtin.shell:
+        cmd: "source /tmp/env && {{ oracle_home_gi }}/gridSetup.sh -responseFile {{ oracle_rsp_stage }}/{{ oracle_grid_responsefile }} -waitforcompletion -silent {{ giignoreprereqparam | default(omit) }}"
       become: true
       become_user: "{{ grid_install_user }}"
       run_once: "{{ configure_cluster }}"
