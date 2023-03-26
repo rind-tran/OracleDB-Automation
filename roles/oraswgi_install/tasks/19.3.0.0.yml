@@ -206,7 +206,8 @@
       when: rootother.stdout_lines is defined
 
     - name: install_home_gi | Execute ConfigTools
-      ansible.builtin.command: "{{ oracle_home_gi }}/gridSetup.sh -executeConfigTools -responseFile {{ oracle_rsp_stage }}/{{ oracle_grid_responsefile }} -silent"
+      # ansible.builtin.command: "{{ oracle_home_gi }}/gridSetup.sh -executeConfigTools -responseFile {{ oracle_rsp_stage }}/{{ oracle_grid_responsefile }} -silent"
+      ansible.builtin.shell: "{{ oracle_home_gi }}/gridSetup.sh -executeConfigTools -responseFile {{ oracle_rsp_stage }}/{{ oracle_grid_responsefile }} -silent"
       become: true
       become_user: "{{ grid_install_user }}"
       run_once: "{{ configure_cluster }}"

@@ -8,6 +8,7 @@ db_homes_config:
     oracle_home: /u01/app/oracle/product/19/db193-si-ee
     edition: EE
     opatch_minversion: 12.2.0.1.24
+    imagename: db_home_19.18.zip
 
   # Current Mapping of ORACLE_HOMEs
   # use this mapping for fast change between the Release Updates
