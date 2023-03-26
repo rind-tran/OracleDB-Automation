@@ -17,6 +17,7 @@ db_homes_config:
     <<: *db193-si-ee
     oracle_home: /u01/app/oracle/product/19/db1
     home: db19-si-ee
+    imagename: db_home_19.18.zip
 
 db_homes_installed:
   - home: db19-si-ee
