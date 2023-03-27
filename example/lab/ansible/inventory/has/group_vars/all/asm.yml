@@ -2,6 +2,7 @@
 oracle_install_version_gi: 19.3.0.0
 apply_patches_gi: false
 role_separation: true     # true: oracle and grid; false: only oracle
+oracle_install_image_gi: grid_home_19.18.zip
 
 oracle_asm_init_dg: data  # 1st diskgroup
 
