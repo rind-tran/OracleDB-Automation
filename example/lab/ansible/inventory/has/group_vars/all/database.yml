@@ -4,8 +4,8 @@
 # https://github.com/opitzconsulting/ansible-oracle-inventory
 #
 oracle_databases:
-  - home: &db_config_home 19300-base
-    oracle_db_name: &oracle_db_name ORCL
+  - home: &db_config_home db19-si-ee
+    oracle_db_name: &oracle_db_name DB1
     oracle_db_type: SI                                   # Type of database (RAC,RACONENODE,SI)
     is_container: true
     storage_type: ASM                                     # Database storage to be used. ASM or FS.
