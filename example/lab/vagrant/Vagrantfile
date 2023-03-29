@@ -29,7 +29,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.disk :disk, size: "50GB", name: "#{vm_name}_oracle"
   config.vm.disk :disk, size: "100GB", name: "#data_oracle"
-  config.vm.disk :disk, size: "2GB", name: "#fra_oracle"
+  config.vm.disk :disk, size: "15GB", name: "#fra_oracle"
 
   #config.vm.box =  "Rendanic/oraclelinux-7.x"
   config.vm.box =  "oraclebase/oracle-8"
