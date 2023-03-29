@@ -59,7 +59,7 @@ oracle_databases:
       - {name: clonedb, value: 'true', scope: spfile, state: present, dbca: false}
       - {name: db_create_file_dest, value: '+DATA', scope: both, state: present}
       - {name: db_create_online_log_dest_1, value: '+DATA', scope: both, state: present}
-      - {name: db_recovery_file_dest_size, value: '10G', scope: both, state: present, dbca: false}
+      - {name: db_recovery_file_dest_size, value: '1G', scope: both, state: present, dbca: false}
 
     profiles:
       - name: DEFAULT
