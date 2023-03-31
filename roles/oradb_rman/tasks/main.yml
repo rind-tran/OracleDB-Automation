@@ -167,6 +167,7 @@
   loop_control:
     label: "{{ dbh.oracle_db_name | default('') }} -> {{ tnsinst.tnsname | default('') }}"
   when:
+    - tnsnames_installed is defined
     - dbh.rman_tnsalias is defined
     - dbh.home == tnsinst.home
     - tnsinst.tnsname == dbh.rman_tnsalias
